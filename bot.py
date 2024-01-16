@@ -4,12 +4,14 @@ import os
 
 load_dotenv()
 
-class MyClient(discord.Bot):
-    async def on_ready(self):
-        print(f'Logged on as {self.user}!')
+bot = discord.Bot()
 
-    async def on_message(self, message):
-        print(f'Message from {message.author}: {message.content}')
+@bot.event
+async def on_ready():
+    print(f'Logged on as {bot.user}!')
 
-client = MyClient()
-client.run(os.getenv('TOKEN'))
+@bot.event
+async def on_message(message):
+    print(f'Message from {message.author}: {message.content}')
+
+bot.run(os.getenv('TOKEN'))
