@@ -5,6 +5,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from threading import Thread
 
 from pdf import PDF
+from chat import Chat
 
 load_dotenv()
 
@@ -22,6 +23,7 @@ async def on_message(message):
     print(f'Message from {message.author}: {message.content}')
 
 bot.add_cog(PDF(bot))
+bot.add_cog(Chat(bot))
 
 def run_httpd(server_class=HTTPServer, handler_class=BaseHTTPRequestHandler):
     server_address = ('', 8080)
