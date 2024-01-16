@@ -6,3 +6,4 @@ py-cord[speed]
 pdf2image
 
 langchain
+langchain-openai
