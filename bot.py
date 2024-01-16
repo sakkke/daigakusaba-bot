@@ -1,10 +1,13 @@
 from dotenv import load_dotenv
-from discord import Bot
+from discord import Bot, Intents
 import os
 
 load_dotenv()
 
-bot = Bot()
+intents = Intents.default()
+intents.message_content = True
+
+bot = Bot(intents=intents)
 
 @bot.event
 async def on_ready():
