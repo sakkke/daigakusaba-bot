@@ -4,7 +4,7 @@ import os
 
 load_dotenv()
 
-class MyClient(discord.Client):
+class MyClient(discord.Bot):
     async def on_ready(self):
         print(f'Logged on as {self.user}!')
 
