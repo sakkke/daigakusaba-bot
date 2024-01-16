@@ -2,6 +2,8 @@ from dotenv import load_dotenv
 from discord import Bot, Intents
 import os
 
+from pdf import PDF
+
 load_dotenv()
 
 intents = Intents.default()
@@ -16,5 +18,7 @@ async def on_ready():
 @bot.event
 async def on_message(message):
     print(f'Message from {message.author}: {message.content}')
+
+bot.add_cog(PDF(bot))
 
 bot.run(os.getenv('TOKEN'))
