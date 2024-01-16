@@ -1,10 +1,10 @@
 from dotenv import load_dotenv
-import discord
+from discord import Bot
 import os
 
 load_dotenv()
 
-bot = discord.Bot()
+bot = Bot()
 
 @bot.event
 async def on_ready():
